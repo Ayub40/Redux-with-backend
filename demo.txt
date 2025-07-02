@@ -1,0 +1,16 @@
+2nd bar ki ki kaj kora hoyse,,,,
+1. baseApi file ta build
+2. 
+
+
+
+
+
+
+==============================================================
+2nd bar RTK Query te jei component ( file ) e kaj kora hoyse
+
+1. redux --> store.ts 
+2. redux --> api --> baseApi.ts
+3. redux --> features2
+4. redux --> api --> features2 --> user2 
