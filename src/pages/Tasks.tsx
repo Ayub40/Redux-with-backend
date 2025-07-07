@@ -5,7 +5,12 @@ import { useGetTasksQuery } from "@/redux/api/baseApi";
 import type { ITask } from "@/types";
 
 export default function Tasks() {
-    const { data, isLoading } = useGetTasksQuery(undefined)
+    // baseApi theke data get kora hosse
+    const { data, isLoading } = useGetTasksQuery(undefined, {
+        refetchOnFocus: true,
+        refetchOnMountOrArgChange: true,
+        refetchOnReconnect: true,
+    })
     console.log({ data, isLoading });
 
     if (isLoading) {
@@ -27,9 +32,12 @@ export default function Tasks() {
                 <AddTaskModal />
             </div>
             <div className="space-y-5 mt-5">
-                {!isLoading && data?.tasks?.map((task: ITask) => (
+                {!isLoading && data?.data?.map((task: ITask) => (
                     <TaskCard task={task} key={task.id} />
                 ))}
+                {/* {!isLoading && data?.tasks?.map((task: ITask) => (
+                    <TaskCard task={task} key={task.id} />
+                ))} */}
             </div>
         </div >
     )

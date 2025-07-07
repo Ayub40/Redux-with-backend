@@ -33,6 +33,7 @@ export function AddTaskModal() {
 
     // isCompleted ta send (create) kora hoyse
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+        console.log(data);
         const taskData = {
             ...data,
             isCompleted: false,
